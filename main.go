@@ -21,6 +21,7 @@ func add(this js.Value, i []js.Value) interface{} {
 	}
 
 	println(int1 + int2)
+	js.Global().Get("document").Call("getElementById", i[2].String()).Set("value", int1+int2)
 	return js.ValueOf(int1 + int2)
 }
 
